@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dicechallenge.css">
+</head>
+<body>
+    <!-- <section class="heading" > -->
+    <div class="first" id="battle">
+        <h1>Refresh Me</h1>
+    </div>
+<!-- </section> -->
+    <button onclick="myFunction()" id="bgc1">CLICK ME</button>
+
+    <div class="second">
+    <div>
+        <h3>Player 1</h3>
+        <img src="dice3.png" alt="" id="change">
+    </div>
+    <div>
+        <h3>Player 2</h3>
+        <img src="dice2.png" alt="" id="player2">
+    
+</div>
+</div>
+<!-- <div id="sum"><h1>sum is:</h1></div> -->
+
+<script>
+    function myFunction(){
+        var button = document.getElementById("bgc1").classList.add("mystyle")
+        // button.style.backgroundColor = "red";
+
+        var n = Math.random();
+     n = (n*6)+1;
+     n = Math.floor(n);
+
+      var randomNumber1 = "dice" + n + ".png";
+      var randomImage1 = document.querySelectorAll("img")[0];
+      randomImage1.setAttribute("src" , randomNumber1);
+       
+
+      var m = Math.random();
+      m = (m*6)+1;
+      m = Math.floor(m);
+      var randomNumber2 = "dice" + m + ".png";
+      var randomImage2 = document.querySelectorAll("img")[1];
+      randomImage2.setAttribute("src" , randomNumber2);
+      console.log(n + " " + m);
+
+   //   document.getElementById("change")
+    //  console.log(n);
+   //   var m = Math.random();
+   //   m = (m*6)+1;
+   //   m = Math.floor(m);
+   //   console.log(n + " " + m);
+
+    //  var s = n + m;
+    //  document.getElementById("sum").innerHTML.h1 = "s";
+     
+   //   var x = document.getElementById("change");
+
+   //   if(n == 1){
+   //      // x.src = "dice1.png";
+   //      document.getElementById("change").src = "dice1.png";
+   //   }
+   //   else if(n == 2){
+   //      document.getElementById("change").src = "dice2.png";
+   //   }
+   //   else if(n == 3){
+   //      document.getElementById("change").src = "dice3.png";
+   //   }
+   //   else if(n == 4){
+   //      document.getElementById("change").src = "dice4.png";
+   //   }
+   //   else if(n == 5){
+   //      document.getElementById("change").src = "dice5.png";
+   //   }
+   //   else{
+   //      document.getElementById("change").src = "dice6.png";
+   //   }
+
+   //   if(m == 1){
+   //      // x.src = "dice1.png";
+   //      document.getElementById("player2").src = "dice1.png";
+   //   }
+   //   else if(m == 2){
+   //      document.getElementById("player2").src = "dice2.png";
+   //   }
+   //   else if(m == 3){
+   //      document.getElementById("player2").src = "dice3.png"
+   //   }
+   //   else if(m == 4){
+   //      document.getElementById("player2").src = "dice4.png";
+   //   }
+   //   else if(m == 5){
+   //      document.getElementById("player2").src = "dice5.png";
+   //   }
+   //   else{
+   //      document.getElementById("player2").src = "dice6.png";
+   //   }
+
+     
+     if(n > m){
+        document.getElementById("battle").innerHTML = "Player1 Win"
+     }
+     else if(m > n){
+        // document.getElementById("battle").classList.add("battle1");
+        document.getElementById("battle").innerHTML = "Player2 Win"
+
+     }
+     else{
+        document.getElementById("battle").innerHTML = "Match Tie";
+
+     }
+    }
+    
+
+</script>
+</body>
+</html>
